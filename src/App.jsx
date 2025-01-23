@@ -42,19 +42,42 @@ class Pomodoro extends Component {
   handleStartStop = () => {
     this.setState({
       isOn: !this.state.isOn
-    })
+    });
+    document.getElementById('start_stop').innerText = this.state.isOn ? 'Stop' : 'Start';
   }
+
 
   render() {
     let seconds = this.state.sessionLength * 60;
+    
 
-    setInterval(updateTime, 1000);
-
-    function updateTime() {
-      let minutes = seconds / 60;
-      document.getElementById('countdown').innerHTML = `${Math.floor(minutes)}:${(seconds % 60) < 10 ? `0${seconds % 60}`:seconds % 60}`;
+   const updateTime = () => {
+      let minutes = Math.floor(seconds / 60);
+      document.getElementById('countdown').innerHTML = `${minutes}:${seconds % 60 < 10 ? '0' + seconds % 60 : seconds % 60}`;
       seconds--;
-    }
+   } 
+
+   isOn ? clearInterval(updateTime) : setInterval(updateTime, 1000);
+
+
+
+
+  
+
+
+
+
+
+
+    //if ison is true
+      //setInterval(updateTime, 1000)
+    //else
+      //clearInterval(updateTime)
+    //if reset is pressed
+      //set seconds to sessionLength * 60
+      //set session length to 25
+      //set break length to 5
+
 
 
     return (
@@ -74,7 +97,7 @@ class Pomodoro extends Component {
           <h2 id='timer-label'>Session</h2>
           <h2 id='countdown'></h2>
           <div id='controls'>
-            <button id='start_stop' onClick={this.handleStartStop}>Start/Stop</button>
+            <button id='start_stop' onClick={this.handleStartStop}>Stop</button>
             <button id='reset'>Reset</button>
           </div>
         </div>
