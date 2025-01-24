@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans;
+}
+
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.ctrlBtn {
+    cursor: pointer;
+    min-width: 80px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 3px;
+}
+
+.changeBtn {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 19px;
+}
+
+#lengths {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.length-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+}
+
+#timer {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#time-left {
+    font-size: 70px;
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
